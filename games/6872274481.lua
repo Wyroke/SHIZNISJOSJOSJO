@@ -14989,7 +14989,7 @@ if getgenv().TestMode then
 					repeat
 						local ent = entitylib.EntityPosition({
 							Part = 'RootPart',
-							Range = Blatant.Enabled and 32 or 23,
+							Range = 32,
 							Players = true,
 							Wallcheck = true
 						})
