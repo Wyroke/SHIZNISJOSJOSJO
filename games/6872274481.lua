@@ -78,15 +78,9 @@ local oldprediction = loadstring(downloadFile('ReVape/libraries/oldpred.lua'), '
 local getfontsize = vape.Libraries.getfontsize
 local getcustomasset = vape.Libraries.getcustomasset
 local hash = loadstring(downloadFile('ReVape/libraries/hash.lua'), 'hash')()
-local role = vape.role
-local user = vape.user
+local role = 'owner'
 
-task.spawn(function()
-	while task.wait(0.01) do
-		vape.role = NR
-		vape.user = NU
-	end
-end)
+
 
 local store = {
 	attackReach = 0,
@@ -17889,7 +17883,7 @@ run(function()
 			table.insert(SynCoreConnections, con)
 		end
 	end
-	if role ~= "owner" and  role ~= "coowner" and user ~= 'synioxzz'  then
+	if role ~= "owner" and  role ~= "coowner" and getgenv().APIKEY ~= 'synioxzz'  then
 		return 
 	end
 	SynPA = vape.Categories.Combat:CreateModule({
@@ -18249,7 +18243,7 @@ run(function()
 		table.insert(CyanCoreConnections, con)
 	end
 
-	if role ~= "owner" and role ~= "coowner" and user ~= 'generalcyan' and user ~= 'shamefr' and user ~= 'yorender' then
+	if role ~= "owner" and role ~= "coowner" and getgenv().APIKEY ~= 'generalcyan' and getgenv().APIKEY ~= 'shamefr' and getgenv().APIKEY ~= 'yorender' then
 		return 
 	end
 
@@ -19687,7 +19681,7 @@ run(function()
 		end
 		return false
 	end
-	if role ~= "owner" and role ~= "coowner" and user ~= "yorender" and user ~= "4t1p" and user ~= "fooluzis" and user ~= "generalcyan" then
+	if role ~= "owner" and role ~= "coowner" and getgenv().APIKEY ~= "yorender" and getgenv().APIKEY ~= "4t1p" and getgenv().APIKEY ~= "fooluzis" and getgenv().APIKEY ~= "generalcyan" then
 		return
 	end
 	MineBypass = vape.Categories.Blatant:CreateModule({
@@ -20341,7 +20335,7 @@ run(function()
 		table.insert(ZikoCoreConnections, con)
 	end
 
-	if role ~= "owner" and role ~= "coowner" and user ~= 'zikomnontop' then
+	if role ~= "owner" and role ~= "coowner" and getgenv().APIKEY ~= 'zikomnontop' then
 		return 
 	end
 
