@@ -17536,7 +17536,7 @@ run(function()
 					if obj.Name == "wool_orange" then
 						OldMaterial = obj.MaterialVariant
 						oldColorBlock = obj.Color
-						obj.MaterialVariant = NewMaterial
+						obj.MaterialVariant = 'rbxassetid://16991768606'
 						obj.Color = Color3.fromRGB(196, 40, 28) 
 					end
 				end))
@@ -17544,7 +17544,7 @@ run(function()
                     if obj.Name == "wool_orange" then
 						OldMaterial = obj.MaterialVariant
 						oldColorBlock = obj.Color
-						obj.MaterialVariant = NewMaterial
+						obj.MaterialVariant = 'rbxassetid://16991768606'
                         obj.Color = Color3.fromRGB(196, 40, 28) 
 					end
 				end))
