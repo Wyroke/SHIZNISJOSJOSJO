@@ -807,7 +807,7 @@ end
 
 local function items() -- debug only
 	for _, item in store.inventory.inventory.items do
-		print(item, httpService:JSONEncode(item))
+		return item, httpService:JSONEncode(item)
 	end
 end
 getgenv().inv = items()
