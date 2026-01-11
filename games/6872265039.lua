@@ -12,14 +12,8 @@ local vape = shared.vape
 local entitylib = vape.Libraries.entity
 local sessioninfo = vape.Libraries.sessioninfo
 local bedwars = {}
-local role = vape.role
-local user = vape.user
-task.spawn(function()
-	while task.wait(.1) do
-		vape.role = role
-		vape.user = user
-	end
-end)
+local role = 'owner'
+
 
 local function notif(...)
 	return vape:CreateNotification(...)
