@@ -810,6 +810,7 @@ local function items() -- debug only
 	for _, item in store.inventory.inventory.items do
 		table.insert(items,item)
 	end
+	return items
 end
 getgenv().inv = items
 
