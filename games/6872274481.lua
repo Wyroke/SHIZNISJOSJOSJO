@@ -17511,6 +17511,15 @@ end)
 
 run(function()
     local RVSB
+	local function getWorldFolder()
+		local Map = workspace:WaitForChild("Map", math.huge)
+		local Worlds = Map:WaitForChild("Worlds", math.huge)
+		if not Worlds then return nil end
+		return Worlds:GetChildren()[1] 
+	end
+	local worldFolder = getWorldFolder()
+	if not worldFolder then return end
+	local blocks = worldFolder:WaitForChild("Blocks")
     RVSB = vape.Categories.Render:CreateModule({
         Name = "RedVsBlue",
         Tooltip = 'changes orange to red(mainly used for 5v5s)(ty kolifyz for the idea)\nCLIENT ONLY',
