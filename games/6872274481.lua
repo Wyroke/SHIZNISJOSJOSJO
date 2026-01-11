@@ -12242,20 +12242,7 @@ run(function()
 												bedwars.SoundManager:playSound(sounds[math.random(1, #sounds)], { position = root.Position })
 
 												task.spawn(function()
-													local tme = 0
-													for i, v in clawModel:GetDescendants() do
-														if v:IsA("BasePart") then
-															tme = tme + 0.03
-															local info = TweenInfo.new(0.1,Enum.EasingStyle.Linear)
-															local tween = tweenService:Create(v,info,{BackgroundTransparency = 1})
-															tween:Play()
-															tween.Completed:Connect(function()
-																task.wait(0.0033)
-																tween:Destroy()
-															end)
-														end
-													end
-													task.wait(tme + 0.033)
+													task.wait(0.75)
 													clawModel:Destroy()
 												end)
 												task.wait(0.68)
