@@ -17542,6 +17542,7 @@ run(function()
 						for i, v in obj:GetDescendants() do
 							if v:IsA("Frame") and v.Name == "2" and v.BackgroundColor3 == Color3.fromRGB(242, 142, 41) then
 								v.BackgroundColor3 = Color3.fromRGB(196,40,28)
+								v:FindFirstChild("TeamName").RichText = true
 								v:FindFirstChild("TeamName").Text = "<b>Red Team<b>"
 							end
 						end
