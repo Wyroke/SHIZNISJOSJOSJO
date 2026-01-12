@@ -17529,7 +17529,7 @@ run(function()
                         obj.Color = Color3.fromRGB(196, 40, 28) 
 					end
 				end))
-				while RVSB.Enabled then
+				while RVSB.Enabled do
 					for i, v in lplr.PlayerGui:FindFirstChild('TopBarAppGui'):GetDescendants() do
 						if v:IsA("Frame") and v.Name == "3" and v.BackgroundColor3 == Color3.fromRGB(242,142,41) then
 							v.BackgroundColor3 = Color3.fromRGB(196,40,28)
