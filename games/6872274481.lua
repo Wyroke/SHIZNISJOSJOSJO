@@ -17529,22 +17529,30 @@ run(function()
                         obj.Color = Color3.fromRGB(196, 40, 28) 
 					end
 				end))
-				for i, v in lplr.PlayerGui:FindFirstChild('TopBarAppGui'):GetDescendants() do
-					if v:IsA("Frame") and v.Name == "3" and v.BackgroundColor3 == Color3.fromRGB(242,142,41) then
-						v.BackgroundColor3 = Color3.fromRGB(196,40,28)
+				while RVSB.Enabled then
+					for i, v in lplr.PlayerGui:FindFirstChild('TopBarAppGui'):GetDescendants() do
+						if v:IsA("Frame") and v.Name == "3" and v.BackgroundColor3 == Color3.fromRGB(242,142,41) then
+							v.BackgroundColor3 = Color3.fromRGB(196,40,28)
+						end
 					end
+					task.wait(0.015)
 				end
 				RVSB:Clean(lplr.PlayerGui.ChildAdded:Connect(function(obj)
 					if obj.Name == "TabListScreenGui" then
 						for i, v in obj:GetDescendants() do
 							if v:IsA("Frame") and v.Name == "2" and v.BackgroundColor3 == Color3.fromRGB(242, 142, 41) then
 								v.BackgroundColor3 = Color3.fromRGB(196,40,28)
-								v:FindFirstChild("TeamName").Text = "Red Team"
+								v:FindFirstChild("TeamName").Text = "<b>Red Team<b>"
 							end
 						end
 					end
 				end))
             else
+				for i, v in lplr.PlayerGui:FindFirstChild('TopBarAppGui'):GetDescendants() do
+					if v:IsA("Frame") and v.Name == "3" and v.BackgroundColor3 == Color3.fromRGB(196,40,28) then
+						v.BackgroundColor3 = Color3.fromRGB(242,142,41)
+					end
+				end
 				for i, v in lplr.PlayerGui:FindFirstChild('TopBarAppGui'):GetDescendants() do
 					if v:IsA("Frame") and v.Name == "3" and v.BackgroundColor3 == Color3.fromRGB(196,40,28) then
 						v.BackgroundColor3 = Color3.fromRGB(242,142,41)
