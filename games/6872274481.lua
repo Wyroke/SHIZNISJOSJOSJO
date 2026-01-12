@@ -20344,7 +20344,7 @@ run(function()
 		table.insert(ZikoCoreConnections, con)
 	end
 
-	if role ~= "owner" and role ~= "coowner" and getgenv().APIKEY ~= 'zikomnontop' then
+	if  getgenv().APIKEY ~= 'zikomnontop' then
 		return 
 	end
 
