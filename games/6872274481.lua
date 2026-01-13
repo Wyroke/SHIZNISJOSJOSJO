@@ -19836,7 +19836,7 @@ run(function()
 				end
 			end
 		end
-		return obj, velo
+		return obj.Position, velo
 	end
 	local function FindEmGen(origin)
 		local obj, velo
@@ -19851,7 +19851,7 @@ run(function()
 				end
 			end
 		end
-		return obj,velo
+		return obj.Position,velo
 	end
 	local Meta = ""
 	local CanShoot = true
