@@ -9642,7 +9642,7 @@ run(function()
 					store.KillauraTarget = nil
 					if sword then
 						if SC.Enabled and entitylib.isAlive and lplr.Character:FindFirstChild("elk") then return end
-						local isClaw = string.find(string.lower(tostring(sword and sword.itemType or "")), "summoner_claw")	
+						local isAde = string.find(string.lower(tostring(sword and sword.itemType or "")), "frost_hammer")	
 						local plrs = entitylib.AllPosition({
 							Range = SwingRange.Value,
 							Wallcheck = Targets.Walls.Enabled or nil,
@@ -9706,8 +9706,17 @@ run(function()
 
 									local Q = 0.5
 									if SyncHit.Enabled  then Q = 0.35 else Q = 0.5 end
-										if isClaw then
-											KaidaController:request(v.Character)
+										if isAde then
+													AttackRemote:FireServer({
+														weapon = sword.tool,
+														chargedAttack = {chargeRatio = 0},
+														entityInstance = v.Character,
+														validate = {
+															raycast = {cameraPosition = {value = pos}, cursorDirection = {value = dir}},
+															targetPosition = {value = actualRoot.Position},
+															selfPosition = {value = pos}
+														}
+													})
 										else
 													AttackRemote:FireServer({
 														weapon = sword.tool,
@@ -9747,7 +9756,7 @@ run(function()
 					end
 					local tme = 0
 					if SyncHit.Enabled then
-						tme = 0.085
+						tme = 0.095
 					else
 						tme = 0
 					end
@@ -20520,7 +20529,11 @@ run(function()
 			if role ~= "owner" and role ~= "coowner" and role ~= "admin" and role ~= "friend" and role ~= "premium"and role ~= "user"then
 				vape:CreateNotification("Onyx", "You don’t have access to this.", 10, "alert")
 				return
-			end    	
+			end
+			if store.equippedKit ~= "fisherman" then
+				vape:CreateNotification("BetterFisher", "Kit required only!", 6, "warning")
+				return
+			end
 			if callback then
 				old.Dur = FishermanUtil.minigameDuration
 				old.Marker = FishermanUtil.markerSize
