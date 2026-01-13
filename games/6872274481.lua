@@ -19890,7 +19890,6 @@ run(function()
 						if Target.Enabled then
 							if Em.Enabled then
 								local pos,spot = FindEmGen(entitylib.character.RootPart.Position)
-								print(pos,spot)
 								if pos and CanShoot then
 									CanShoot = false
 									local staff = getItem("spirit_staff")
@@ -19905,7 +19904,6 @@ run(function()
 									local calc = prediction.SolveTrajectory(pos, meta.launchVelocity, gravity, spot, Vector3.zero, 0, 0, 0)
 									if calc then
 										local dir = CFrame.lookAt(pos, calc).LookVector * meta.launchVelocity
-										projectileRemote:InvokeServer(staff.tool, Meta, Meta, pos, pos, dir, httpService:GenerateGUID(true), {drawDurationSeconds = 0, shotId = httpService:GenerateGUID(false)}, workspace:GetServerTimeNow() - 0.045)     
 										task.wait(1 / Delay.GetRandomValue() + math.random())
 										CanShoot = true
 									end
@@ -19930,7 +19928,7 @@ run(function()
 									local calc = prediction.SolveTrajectory(pos, meta.launchVelocity, gravity, spot, Vector3.zero, 0, 0, 0)
 									if calc then
 										local dir = CFrame.lookAt(pos, calc).LookVector * meta.launchVelocity
-										projectileRemote:InvokeServer(staff.tool, Meta, Meta, pos, pos, dir, httpService:GenerateGUID(true), {drawDurationSeconds = 0, shotId = httpService:GenerateGUID(false)}, workspace:GetServerTimeNow() - 0.045)     
+										print(calc)
 										task.wait(1 / Delay.GetRandomValue() + math.random())
 										CanShoot = true
 									end
