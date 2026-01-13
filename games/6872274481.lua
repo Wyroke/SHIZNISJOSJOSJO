@@ -19824,34 +19824,34 @@ run(function()
 		end
 	end)
 	local function FindDimGen(origin)
-		local obj, velo
+		local pos, velo
 		for i, dims in workspace.ItemDrops:GetChildren() do
 			if dims:IsA("BasePart") then
 				if dims.Name == "diamond" then
 					local d = (dims.Position - origin).Magnitude
 					if Range.Value <= d then
-						obj = dims
+						pos = dims.Position
 						velo = obj.AssemblyLinearVelocity.Magnitude
 					end
 				end
 			end
 		end
-		return obj.Position, velo
+		return pos, velo
 	end
 	local function FindEmGen(origin)
-		local obj, velo
+		local pos, velo
 		for i, ems in workspace.ItemDrops:GetChildren() do
 			if ems:IsA("BasePart") then
 				if ems.Name == "emerald" then
 					local d = (ems.Position - origin).Magnitude
 					if Range.Value <= d then
-						obj = ems
+						pos = ems.Position
 						velo = obj.AssemblyLinearVelocity.Magnitude
 					end
 				end
 			end
 		end
-		return obj.Position,velo
+		return pos,velo
 	end
 	local Meta = ""
 	local CanShoot = true
