@@ -7977,59 +7977,7 @@ run(function()
 	})
 end)
 
-task.spawn(function()
-    local running = true
-    local CurrentVersion = tonumber(vape and vape.Version) or 0
 
-    while running do
-        local LatestVersion = 0
-        local success, response = pcall(function()
-            return game:HttpGet("https://onyxclient.fsl58.workers.dev/version")
-        end)
-
-        if success and response then
-            local decoded
-            pcall(function()
-                decoded = game:GetService("HttpService"):JSONDecode(response)
-            end)
-
-            if decoded and decoded.VERSION then
-                LatestVersion = tonumber(decoded.VERSION) or 0
-            end
-        end
-
-        if LatestVersion ~= 0 and LatestVersion ~= CurrentVersion then
-            pcall(function()
-                vape:CreateNotification('Update Found!', 'Reinjecting to finalize update..', 2.85, 'warning')
-            end)
-
-            task.wait(3)
-            shared.vapereload = true
-
-            getgenv().username = getgenv().username or "GUEST"
-            getgenv().password = getgenv().password or "PASSWORD"
-
-            if shared.VapeDeveloper then
-                pcall(function()
-                    loadstring(readfile('ReVape/loader.lua'), 'loader')()
-                end)
-            else
-                pcall(function()
-                    loadstring(game:HttpGet('https://raw.githubusercontent.com/soryed/ReVapeForRoblox/main/loader.lua', true))()
-                end)
-            end
-
-            running = false
-        elseif LatestVersion == 0 or CurrentVersion == 0 then
-            pcall(function()
-                vape:CreateNotification('THIS IS NOT A UPDATE!','THE UPDATE VERSION FILE IS CORRUPTED!! DM ' .. (vape and vape.Discord or "discord") .. ' ASAP!', 45,'alert')
-            end)
-        end
-
-        if not running then break end
-        task.wait(3)
-    end
-end)
 
 
 local uipallet = {
