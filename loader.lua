@@ -1,34 +1,3 @@
-local accountinfo = {}
-
-local ARGS = ... or {}
-local function TTD()
-    delfolder('ReVape')
-end
-
-if ARGS.Refresh then
-    TTD()
-    if not isfolder('ReVape') then
-        print('Successfully deleted the "ReVape" folder!')
-    else
-        warn('Had an issue deleting the "ReVape" folder. Please DM the user "7ykt" on Discord!')
-    end
-end
-
-if getgenv().username  and next(ARGS) == nil then
-	ARGS.username = getgenv().username
-	ARGS.password = getgenv().password
-end
-if typeof(ARGS) ~= "table" then
-	getgenv().username = 'GUEST' 
-	getgenv().password = 'PASSWORD' 
-end
-getgenv().username = ARGS.username
-getgenv().password = ARGS.password
-getgenv().TestMode = ARGS.TestMode or false
-
-
-local tweenService = game:GetService('TweenService')
-
 local isfile = isfile or function(file)
 	local suc, res = pcall(function()
 		return readfile(file)
@@ -65,29 +34,10 @@ local function wipeFolder(path)
 	end
 end
 
-
 for _, folder in {'ReVape', 'ReVape/games', 'ReVape/profiles', 'ReVape/assets', 'ReVape/libraries', 'ReVape/guis'} do
 	if not isfolder(folder) then
 		makefolder(folder)
 	end
-	task.wait(0.05)
-end
-
-
-local folders = {'Revape/accounts'}
-
-for _, folder in ipairs(folders) do
-    if not isfolder(folder) then
-        makefolder(folder)
-    end
-    local files = {folder .. '/username.txt', folder .. '/password.txt'}
-    for _, txt in ipairs(files) do
-        if not isfile(txt) then
-            writefile(txt, "")
-        end
-        task.wait(0.05)
-    end
-    task.wait(0.05)
 end
 
 if not shared.VapeDeveloper then
