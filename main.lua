@@ -139,7 +139,6 @@ end)
 
 if not shared.VapeIndependent then
 	loadstring(downloadFile('ReVape/games/universal.lua'), 'universal')()
-	loadstring(downloadFile('ReVape/libraries/whitelist.lua'), 'whitelist')()
 
 	if isfile('ReVape/games/'..game.PlaceId..'.lua') then
 		loadstring(readfile('ReVape/games/'..game.PlaceId..'.lua'), tostring(game.PlaceId))(...)
