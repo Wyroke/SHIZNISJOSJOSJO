@@ -4528,7 +4528,7 @@ run(function()
 		AEGT:Clean(TeleportService:Teleport(game.PlaceId, lplr, data))
 	end
 	AEGT = vape.Categories.Utility:CreateModule({
-		Name = 'EmptyGameTP',
+		Name = 'MatchHistoryReset',
 		Function = function(callback)
 			if callback then
 				if E.Enabled then
