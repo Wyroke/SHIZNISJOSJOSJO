@@ -19454,10 +19454,7 @@ run(function()
 	local Delay
 	local Angle
 	local tip = ''
-	if user == 'kolifyz' then
-		tip = "makes you play like kolifyz(DEMON AT WARDEN BOI)"
-	else
-		tip = "makes you play like jewlifyz"
+																																																																																																																																																																																																																																																																
 	end
 	local function kitCollection(id, func, range, angle,d)
 		local objs = type(id) == 'table' and id or collection(id, BetterWarden)
@@ -19555,7 +19552,7 @@ run(function()
 	local HDSpeed
 	local HDWL
 	HD = vape.Categories.Utility:CreateModule({
-		Name = 'HackerDetector',
+		Name = 'WizDetector',
 		Function = function(callback)
 			task.spawn(function()
 				if not HDWL.Enabled then
