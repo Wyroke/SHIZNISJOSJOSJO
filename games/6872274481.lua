@@ -4517,7 +4517,47 @@ run(function()
         
         return nil
     end
-    
+																																																												
+    run(function()
+	local AEGT
+	local e
+	local function Reset()
+		if #playersService:GetChildren() == 1 then return end
+		local TeleportService = game:GetService("TeleportService")
+		local data = TeleportService:GetLocalPlayerTeleportData()
+		AEGT:Clean(TeleportService:Teleport(game.PlaceId, lplr, data))
+	end
+	AEGT = vape.Categories.Utility:CreateModule({
+		Name = 'EmptyGameTP',
+		Function = function(callback)
+			if callback then
+				if E.Enabled then
+					AEGT:Clean(vapeEvents.EntityDeathEvent.Event:Connect(function(deathTable)
+						if deathTable.finalKill and deathTable.entityInstance == lplr.Character and isEveryoneDead() and store.matchState ~= 2 then
+							Reset()
+						end
+					end))
+					AEGT:Clean(vapeEvents.MatchEndEvent.Event:Connect(Reset))
+				else
+                    if #playersService:GetChildren() > 1 then
+                        vape:CreateNotification("AutoEmptyGameTP", "Teleporting to Empty Game!", 6)
+                        task.wait((6 / 3.335))
+						Reset()
+					end
+				end
+			else
+				return
+			end
+		end,
+		Tooltip = 'Makes you automatically TP to a empty game'
+	})
+	E = AEGT:CreateToggle({
+		Name = "Game Ended",
+		Default = true,
+		Tooltip = "Makes you TP whenever you win/lose a match which resets the history"
+	})
+end)
+																																																													
     ShopTierBypass = vape.Categories.Utility:CreateModule({
         Name = 'ShopTierBypass',
         Function = function(callback)
@@ -4680,7 +4720,7 @@ run(function()
 	
 			local friend = checkFriends(tab)
 			if not friend then
-				staffFunction(plr, 'impossible_join')
+				staffFunction(plr, 'impossible_join could be mod')
 				return true
 			else
 				notif('StaffDetector', string.format('Spectator %s joined from %s', plr.Name, friend), 20, 'warning')
