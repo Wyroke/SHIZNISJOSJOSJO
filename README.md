@@ -2,7 +2,7 @@
 a remaster of vape v4
 
 # Contants
-@ye40 on discord
+@7ykt on discord
 
 # ANY TROUBLE OF LOADING THE SCRIPT PLEASE DO THIS
 CLOSE ROBLOX FIRST!!
@@ -13,14 +13,14 @@ DELETE "ReVape" folder
 
 AND THEN RECONNECT THE SCRIPT!
 
--# any troubles still please contant me on discord 'ye40'
+-# any troubles still please contant me on discord '7ykt'
 
 # A WORK IN PROGRES
 # Usage
 1. Inject ur executor
-2. Execute this script provided loadstring(game:HttpGet("https://raw.githubusercontent.com/soryed/ReVapeForRoblox/main/NewMainScript.lua", true))()
+2. Execute this script provided loadstring(game:HttpGet("https://raw.githubusercontent.com/Wyroke/ReVapeForRoblox/main/NewMainScript.lua", true))()
 # Developers & Credits
-soryed - Owner/Creater of this project
+HUGE CREDIT TO spec - Owner/Creater of this AMAZING PROJECT
 
 -----------------[CREDITS]---------------------
 
