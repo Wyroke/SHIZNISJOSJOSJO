@@ -2479,9 +2479,7 @@ run(function()
 end)
 
 local Attacking
-
-																	
-	
+															
 run(function()
 	local Value
 	local CameraDir
