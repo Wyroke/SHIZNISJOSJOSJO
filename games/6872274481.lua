@@ -2864,6 +2864,7 @@ run(function()
 	local Targets
 	local FOV
 	local OtherProjectiles
+	local Blacklist																												
 	local rayCheck = RaycastParams.new()
 	rayCheck.FilterType = Enum.RaycastFilterType.Include
 	rayCheck.FilterDescendantsInstances = {workspace:FindFirstChild('Map')}
@@ -2959,8 +2960,23 @@ run(function()
 		Name = 'Other Projectiles',
 		Default = true
 	})
+
+OtherProjectiles = ProjectileAimbot:CreateToggle({
+		Name = 'Other Projectiles',
+		Default = true,
+		Function = function(call)
+			if Blacklist then
+				Blacklist.Object.Visible = call
+			end
+		end
+	})
+	Blacklist = ProjectileAimbot:CreateTextList({
+		Name = 'Blacklist',
+		Darker = true,
+		Default = {'telepearl'}
+	})
 end)
-	
+																													
 run(function()
 	local ProjectileAura
 	local Targets
