@@ -2800,14 +2800,14 @@ run(function()
 		Tooltip = 'Prevents slowing down when using items.'
 	})
 end)
-	
-run(function()
+	run(function()
 	local SilentAim = {Enabled = true}
 	local TargetPart
 	local Targets
 	local FOV
 	local OtherProjectiles
 	local Blacklist
+
 	local rayCheck = RaycastParams.new()
 	rayCheck.FilterType = Enum.RaycastFilterType.Include
 	rayCheck.FilterDescendantsInstances = {workspace:FindFirstChild('Map')}
@@ -2943,8 +2943,8 @@ run(function()
 		Darker = true,
 		Default = {'telepearl'}
 	})
-end)																												
-																													
+end)
+																												
 run(function()
 	local ProjectileAura
 	local Targets
