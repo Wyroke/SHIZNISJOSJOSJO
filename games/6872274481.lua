@@ -2863,7 +2863,7 @@ run(function()
 	local TargetPart
 	local Targets
 	local FOV
-	local OtherProjectiles
+	local OtherProjectiles																												
 	local Blacklist																												
 	local rayCheck = RaycastParams.new()
 	rayCheck.FilterType = Enum.RaycastFilterType.Include
@@ -2955,10 +2955,6 @@ run(function()
 		Min = 1,
 		Max = 1000,
 		Default = 1000
-	})
-	OtherProjectiles = ProjectileAimbot:CreateToggle({
-		Name = 'Other Projectiles',
-		Default = true
 	})
 
 OtherProjectiles = ProjectileAimbot:CreateToggle({
