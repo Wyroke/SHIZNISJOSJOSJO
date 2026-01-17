@@ -74,7 +74,7 @@ if ARGS.ForceRefresh then
 	task.wait(0.5)
    if not isfile('ReVape/main.lua') then
 		StarterGui:SetCore('SendNotification', {
-			Title = 'Onyx',
+			Title = 'SpecV4',
 			Text = 'Successfully force deleted Onyx!!',
 			Duration = 12
 		})
