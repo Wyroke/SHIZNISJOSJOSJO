@@ -2801,7 +2801,7 @@ run(function()
 	})
 end)
 																										
-	run(function()
+run(function()
 	local SilentAim = {Enabled = true}
 	local TargetPart
 	local Targets
