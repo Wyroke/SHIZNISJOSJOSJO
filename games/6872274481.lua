@@ -2973,7 +2973,8 @@ run(function()
 				if result and result.Instance then
 					selectSynTarget(result.Instance)
 				end
-			
+			end)	
+																														
 	SynPA = vape.Categories.Combat:CreateModule({
 		Name = 'SynPA',
 		Tooltip = "Thanks for Syn for giving me this script",
